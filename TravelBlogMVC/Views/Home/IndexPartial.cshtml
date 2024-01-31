@@ -1,0 +1,14 @@
+﻿@model IEnumerable<TravelBlogMVC.Models.Model.Cities>
+<ul class="cat">
+    @foreach (var item in Model)
+    {
+        if (@item.BlogPosts.Count() != 0)
+        {
+            <li>
+                @*<i class="icon-angle-right"></i><a href="@Url.Action("Index","Home",new {cityId=item.Id})">@item.CityName</a>*@
+                <i class="icon-angle-right"></i><a href="/Home/citiesBlog/@item.Id/">@item.CityName</a>
+                <span> (@item.BlogPosts.Count())</span>
+            </li>
+        }
+    }
+</ul>

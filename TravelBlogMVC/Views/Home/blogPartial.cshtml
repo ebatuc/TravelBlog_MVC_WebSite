@@ -1,0 +1,13 @@
+﻿@model IEnumerable<TravelBlogMVC.Models.Model.BlogPosts>
+
+@foreach (var item in Model)
+{
+    <li>
+        <img src="@item.ResimURL" class="pull-left" alt="" />
+        <h6><a href="/Home/blogDetail/@item.Id">@item.Title</a></h6>
+        <p>
+            @Html.Raw(item.Content.Substring(0, 100)) ...
+        </p>
+    </li>
+
+}
